@@ -100,6 +100,8 @@ function upgradeUser(user) {
   // long upgrade logic...
 }
 
+//-------------------------------------------------------
+
 // First-class function
 // functions are treated like any other variable
 // can be assigned as a value to variable
@@ -126,6 +128,8 @@ function print2() {
   console.log('print2');
 };
 
+//-------------------------------------------------------
+
 // 2. Callback function using function expression
 function randomQuiz(answer, printYes, printNo) {
   if(answer === 'love you') {
@@ -150,6 +154,8 @@ const printNo = function print() {
 randomQuiz('wrong', printYes, printNo);
 randomQuiz('love you', printYes, printNo);
 
+//-------------------------------------------------------
+
 // Arrow function
 // always anonymous
 const simplePrint1 = function () {
@@ -162,6 +168,8 @@ const simpleMultiply = (a, b) => {
   // do something more
   return a * b;
 };
+
+//-------------------------------------------------------
 
 // IIFE: Immediately Invoked Function Expression
 (function hello() {
