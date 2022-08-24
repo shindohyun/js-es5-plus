@@ -60,7 +60,10 @@ console.log(`or: ${value1 || value2 || check()}`);
 console.log(`and: ${value1 && value2 && check()}`);
 
 // often used to compress long if-statement
-// nullableObject && nullableObject.something
+// if(nullableObject != null) {
+//   nullableObject.something;
+// }
+// => nullableObject && nullableObject.something
 
 function check() {
     for(let i = 0; i < 10; i++){
