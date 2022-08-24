@@ -69,7 +69,7 @@ function printMessage() {
     let childMessage = 'hello';
   }
   // console.log(childMessage); // error
-  // return undefined;
+  // return undefined; // 아무것도 반환하지 않는 경우 undefined 반환
 }
 printMessage();
 
