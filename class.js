@@ -31,9 +31,10 @@ ellie.speak();
 // 2. Getter and setters
 class User {
   constructor(firstName, lastName, age) {
+    // 현재 User는 firstName, lastName, _age 세 개의 필드를 갖는다.
     this.firstName = firstName;
     this.lastName = lastName;
-    this.age = age; // call setter
+    this.age = age; // call age getter and setter
   }
 
   get age() {
