@@ -81,7 +81,7 @@ console.log(ellie.random);
 
 // 6. for..in vs for..of
 // for (key in obj)
-console.clear();
+// console.clear();
 for (const key in ellie) {
   console.log(key);
 }
@@ -90,6 +90,10 @@ for (const key in ellie) {
 const array = [1, 2, 4, 5];
 for(const value of array) {
   console.log(value);
+}
+
+for(const key in array){
+  console.log(key); // index of array
 }
 
 //-------------------------------------------------------
@@ -107,7 +111,7 @@ const user3 = {};
 for (const key in user) {
   user3[key] = user[key];
 }
-console.clear();
+//console.clear();
 user3.name = 'coder';
 console.log(user3);
 console.log(user);
