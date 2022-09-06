@@ -121,3 +121,11 @@ const students = [
   console.log(result.sort((a, b) => a - b).join()); // 오름차순
   console.log(result.sort((a, b) => b - a).join()); // 내림차순
 }
+
+// Q11. 배열 중복 없애기
+{
+  const array = ['dog', 'cat', 'fox', 'dog', 'dog', 'cat'];
+  console.log(array);
+
+  console.log([...new Set(array)]);
+}
