@@ -64,8 +64,10 @@
 //-------------------------------------------------------
 
 // 2. Nullish Coalescing Operator
+// Nullish Coalescing Operator is only for null or undefined.
 {
   // Logical OR operator
+  // Logical OR operator is only for falsy.
   // false: false, '', 0, null, undefined
   {
     const name = 'Ellie';
@@ -88,6 +90,19 @@
     const num = 0;
     const message = num || 'undefined'; // 숫자 역시 0으로 지정되어 있어도 false로 간주되어 undefined가 출력된다.
     console.log(message);
+
+    function printMessage(text) {
+      const message = text || 'Nothing to display';
+      console.log(message);
+    }
+
+    printMessage('hello');    // hello
+    printMessage(null);       // Nothing to display
+    printMessage(undefined);  // Nothing to display
+    printMessage(0);          // Nothing to display
+    printMessage('');         // Nothing to display
+    printMessage(false);      // Nothing to display
+    printMessage();           // Nothing to display
   }
 
   // good!
@@ -99,5 +114,18 @@
     const num = 0;
     const message = num ?? 'undefined';
     console.log(message);
+
+    function printMessage(text) {
+      const message = text ?? 'Nothing to display';
+      console.log(message);
+    }
+
+    printMessage('hello');    // hello
+    printMessage(null);       // Nothing to display
+    printMessage(undefined);  // Nothing to display
+    printMessage(0);          // 0
+    printMessage('');         // ''
+    printMessage(false);      // false
+    printMessage();           // Nothing to display
   }
 }
