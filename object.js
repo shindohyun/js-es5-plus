@@ -116,7 +116,7 @@ user3.name = 'coder';
 console.log(user3);
 console.log(user);
 
-// user Object.assign
+// use Object.assign
 user.name = 'ellie';
 const user4 = {};
 Object.assign(user4, user);
