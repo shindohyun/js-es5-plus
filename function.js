@@ -33,6 +33,7 @@ console.log(ellie);
 //-------------------------------------------------------
 
 // 3. Default parameters (added in ES6)
+// Default parameter is only for undefined
 function showMessage(message, from = 'unknown'){
     console.log(`${message} by ${from}`);
 }
