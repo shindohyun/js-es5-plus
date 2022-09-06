@@ -83,6 +83,9 @@
   obj1.key = 'newKey';
   console.log(array, arrayCopy, arrayCopy2);
 
+  const arrayCopy3 = [{key: 'key3'}, ...array]; // 맨 앞에 추가하기
+  console.log(arrayCopy3);
+
   // object copy
   const obj3 = {...obj1}; // Object를 복사할때에는 중괄호{} 사용
   console.log(obj1, obj3);
@@ -107,6 +110,7 @@
 //-------------------------------------------------------
 
 // 4. Default parameters
+// Default parameter is only for undefined
 // bad..
 {
   function printMessage(message) {
@@ -127,8 +131,13 @@
     console.log(message);
   }
 
-  printMessage('hello');
-  printMessage();
+  printMessage('hello');    // hello
+  printMessage();           // default message
+  printMessage(undefined);  // default message
+  printMessage(false);      // false
+  printMessage('');         // ''
+  printMessage(0);          // 0
+  printMessage(null);       // null
 }
 
 //-------------------------------------------------------
