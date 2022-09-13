@@ -68,7 +68,7 @@
 {
   // Logical OR operator
   // Logical OR operator is only for falsy.
-  // false: false, '', 0, null, undefined
+  // false: '', 0, NaN, null, undefined, false
   {
     const name = 'Ellie';
     const userName = name || 'Guest';

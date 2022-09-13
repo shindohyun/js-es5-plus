@@ -71,7 +71,7 @@ const helloBob = `hi ${brendan}!`; // template literals (string)
 console.log(`value: ${helloBob}, type: ${typeof helloBob}`);
 
 // boolean
-// false: 0, null, undefined, NaN, ''
+// false: '', 0, NaN, null, undefined, false
 // true: any other value
 const canRead = true;
 const test = 3 < 1; // false
