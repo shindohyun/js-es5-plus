@@ -170,6 +170,35 @@ const simpleMultiply = (a, b) => {
   return a * b;
 };
 
+// Arrow function에 없는것들 
+// 1. 함수이름(always anonymous)
+// 2. this(* this.js 참고)
+// 3. arguments
+{
+  const myFunc = function() {
+    console.log(arguments);
+  }
+
+  myFunc(1,2,3,4);
+
+  const myFunc2 = () => {
+    console.log(arguments);
+  }
+
+  // myFunc2(1,2,3,4); // error: arguments is not defined
+}
+
+{
+  function outter() {
+    const myFunc = () => {
+      console.log(arguments); // function outter의 arguments
+    }
+    myFunc();
+  }
+
+  outter(1,2,3,4);
+}
+
 //-------------------------------------------------------
 
 // IIFE: Immediately Invoked Function Expression
