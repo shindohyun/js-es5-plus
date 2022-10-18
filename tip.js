@@ -143,3 +143,70 @@ if(typeof b !== 'undefined') {
   counter.increment();
   console.log(counter.getVal());
 }
+
+// 9. Number의 범위
+{
+  // 표현 가능한 가장 큰 양수
+  console.log(Number.MAX_VALUE);
+
+  // Number.MAX_VALUE를 넘어서도 MAX_VALUE 값으로 제한되다가 어느 시점 부터 Infinity 변경된다.
+  console.log(Number.MAX_VALUE + 1000) // == Number.MAX_VALUE
+  console.log(Number.MAX_VALUE * 1000) // Infinity
+
+  // 표현 가능한 가장 작은 양수 (0에 가장 가까운 숫자)
+  console.log(Number.MIN_VALUE);
+
+  // 표현 가능한 숫자 범위
+  console.log(`${Number.MAX_VALUE} ~ ${-Number.MAX_VALUE}`);
+
+  // 정수의 범위
+  console.log(`${Number.MAX_SAFE_INTEGER} ~ ${Number.MIN_SAFE_INTEGER}`); 
+
+  // 정수의 범위를 넘어가는 경우 비교 불가
+  console.log(Number.MAX_SAFE_INTEGER + 1 === Number.MAX_SAFE_INTEGER + 2) // true!
+  console.log(Number.MIN_SAFE_INTEGER - 1 === Number.MIN_SAFE_INTEGER - 2) // true!
+  console.log(Number.MAX_SAFE_INTEGER) // 9007199254740991
+  console.log(Number.MAX_SAFE_INTEGER + 1) // 9007199254740992 - Correct
+  console.log(Number.MAX_SAFE_INTEGER + 2) // 9007199254740992 - Rounded!
+  console.log(Number.MAX_SAFE_INTEGER + 3) // 9007199254740994 - Rounded - correct by luck
+  console.log(Number.MAX_SAFE_INTEGER + 4) // 9007199254740996 - Rounded!
+
+  // Number.isSafeInteger 함수는 안전한 정수인지 검사한다.
+  console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER)) // true
+  console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1)) // false
+  console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 10)) // false
+}
+
+// 10. Number의 한계
+{
+  console.log(0.1+0.2); // 0.30000000000000004
+}
+
+// 11. NaN 를 확인하고 싶을때는 Number.isNaN을 사용
+{
+  var i = 'hello'/2;
+  console.log(i); // NaN
+  console.log(NaN === i) // false!!
+  console.log(Number.isNaN(i)); // true
+}
+
+// 12. !! 패턴
+// 1) !는 변수를 반전된 boolean 값으로 전환한다.
+// 2) '', 0, NaN, null, undefined, false 는 false 임을 안다.
+{
+  var a = '';
+  var a_is = !a; // true (a의 반전된 boolean 값)
+  console.log(`${a_is}(${typeof a_is})`);
+  a_is = !a_is; // false (a의 원래 boolean 값)
+  console.log(`${a_is}(${typeof a_is})`);
+
+  // 이를 한번에 표현하면
+  var b = '';
+  var b_is = !!b;
+  console.log(`${b_is}(${typeof b_is})`);
+
+  // 활용
+  const name = '';
+  const hasName = !!name;
+  console.log(hasName);
+}
