@@ -110,4 +110,36 @@ if(typeof b !== 'undefined') {
  * => JSON에서 없는 값을 표현하기 위해 null을 사용하는데, 없는 값이라면 아예 전달하지 않으면 된다.
  */
 
-// TODO: 클로저
+// 8. Closure
+// 클로저란? 자신이 생성될 때의 환경을 기억하는 함수
+{
+  // 예제.
+  function outerFunction(arg) {
+    var x = arg;
+    return function() {
+      console.log(x);
+    }
+  }
+
+  var innerFunction = outerFunction('hello');
+  innerFunction(); // Closure
+
+  // 활용.
+  function createCounter() {
+    let val = 0;
+    return {
+      increment() {
+        val ++;
+      },
+      getVal() {
+        return val;
+      }
+    }
+  }
+
+  let counter = createCounter();
+  counter.increment();
+  console.log(counter.getVal());
+  counter.increment();
+  console.log(counter.getVal());
+}
