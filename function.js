@@ -248,7 +248,7 @@ const simpleMultiply = (a, b) => {
             return current;
         }
     };
-})();
+  })();
 
   console.log(Counter.getCurrentValue()); // 0
   console.log(Counter.increaseValue()); // 1
