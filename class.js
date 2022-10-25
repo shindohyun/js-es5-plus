@@ -26,6 +26,21 @@ console.log(ellie.name);
 console.log(ellie.age);
 ellie.speak();
 
+// Person Class를 함수로 만들면 다음과 같다.
+var Person2 = function(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person2.prototype.speak = function() {
+  console.log(`${this.name}: hello!`);
+}
+
+const dohyun = new Person2('dohyun', 30);
+console.log(dohyun.name);
+console.log(dohyun.age);
+dohyun.speak();
+
 //-------------------------------------------------------
 
 // 2. Getter and setters
