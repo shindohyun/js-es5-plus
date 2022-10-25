@@ -54,15 +54,17 @@ console.log(user1.age);
 
 //-------------------------------------------------------
 
-// 3. Fields (public, private)
+// 3. Fields (public, private, protected)
 // Too soon!
 class Experiment {
   publicField = 2;
   #privateField = 0;
+  _protectedField = 3; // 개발자들 사이의 암묵적인 약속 (주의: 자바스크립트 문법은 아니다.)
 }
 const experiment = new Experiment();
 console.log(experiment.publicField);
 console.log(experiment.privateField);
+console.log(experiment._protectedField);
 
 //-------------------------------------------------------
 
@@ -84,6 +86,9 @@ const article2 = new Article(2);
 console.log(article1.publisher); // undefined
 console.log(Article.publisher);
 // article1.printPublisher(); // error
+Article.printPublisher();
+
+Article.publisher = 'Dream Coder';
 Article.printPublisher();
 
 //-------------------------------------------------------
@@ -128,6 +133,17 @@ console.log(rectangle.getArea());
 const triangle = new Triangle(20, 20, 'red');
 triangle.draw();
 console.log(triangle.getArea());
+
+// constructor override 
+class Rectangle2 extends Shape {
+  constructor(width, height, color, radius) {
+    super(width, height, color);
+    this.radius = radius;
+  }
+}
+
+const rectangle2 = new Rectangle2(40, 40, 'green', 20);
+console.log(rectangle2);
 
 //-------------------------------------------------------
 
