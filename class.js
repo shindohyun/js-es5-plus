@@ -30,11 +30,15 @@ ellie.speak();
 var Person2 = function(name, age) {
   this.name = name;
   this.age = age;
+  this.speak = function() {
+    console.log(`${this.name}: hello!`);
+  }
 }
 
-Person2.prototype.speak = function() {
-  console.log(`${this.name}: hello!`);
-}
+// speak 함수를 다음과 같이 추가할 수도 있다.
+// Person2.prototype.speak = function() {
+//   console.log(`${this.name}: hello!`);
+// }
 
 const dohyun = new Person2('dohyun', 30);
 console.log(dohyun.name);
