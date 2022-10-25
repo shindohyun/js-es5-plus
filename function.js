@@ -205,3 +205,52 @@ const simpleMultiply = (a, b) => {
 (function hello() {
   console.log('IIFE');
 })();
+
+// Arrow function 버전
+(()=>{
+  console.log('IIFE Arrow function version');
+})();
+
+// parameter
+(function hello(name) {
+  console.log(`hello, ${name}!`);
+})('dohyun');
+
+// 활용1. 초기화
+{
+  let isAdult;
+
+  (function init(age) {
+    if(age >= 20) {
+      isAdult = true;
+    } else {
+      isAdult = false;
+    }
+  })(15);
+
+  console.log(isAdult);
+}
+
+// 활용2. 모듈
+{
+  const Counter = (function () {
+    let current = 0;
+    return {
+        getCurrentValue: function () {
+            return current;
+        },
+        increaseValue: function () {
+            current = current + 1;
+            return current;
+        },
+        decreaseValue: function () {
+            current = current - 1;
+            return current;
+        }
+    };
+})();
+
+  console.log(Counter.getCurrentValue()); // 0
+  console.log(Counter.increaseValue()); // 1
+  console.log(Counter.decreaseValue()); // 0
+}
