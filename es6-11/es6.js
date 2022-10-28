@@ -26,42 +26,115 @@
 //-------------------------------------------------------
 
 // 2. Destructuring Assginment
+// Tip: 구조에 맞게 받아내면 된다.
 {
   // Object
-  const student = {
-    name: 'Anna',
-    level: 1
-  };
-
-  // bad..
   {
-    const name = student.name;
-    const level = student.level;
-    console.log(name, level);
+    const student = {
+      name: 'Anna',
+      level: 1
+    };
+  
+    // bad..
+    {
+      const name = student.name;
+      const level = student.level;
+      console.log(name, level);
+    }
+  
+    // good!
+    {
+      const {name, level} = student;
+      console.log(name, level);
+  
+      const {name: studentName, level: studentLevel} = student; // Object에 사용할때는 중괄호{} 사용
+      console.log(studentName, studentLevel);
+    }
   }
 
-  // good!
+  // 새로운 변수에 담기
   {
-    const {name, level} = student;
-    console.log(name, level);
+    const student = {
+      name: 'Anna',
+      level: 1
+    };
 
-    const {name: studentName, level: studentLevel} = student; // Object에 사용할때는 중괄호{} 사용
-    console.log(studentName, studentLevel);
+    const {'name': newName, 'level': newLevel} = student;
+    console.log(newName, newLevel);
+  }
+
+  // 깊은 데이터 구조
+  {
+    const foo = {
+      bar: {
+        bas: 123
+      }
+    }
+  
+    const foo1 = foo;
+    console.log(foo1);
+    console.log(foo1.bar);
+    console.log(foo1.bar.bas);
+  
+    const {bar} = foo;
+    console.log(bar);
+    console.log(bar.bas);
+  
+    const {bar: {bas}} = foo;
+    console.log(bas);
+  
+  }
+  
+  // 나머지 객체
+  {
+    const {w, x, ...remaining} = {w:1, x:2, y:3, z:4};
+    console.log(w, x, remaining);
+  
+    const {...remainingAll} = {w:1, x:2, y:3, z:4};
+    console.log(remainingAll);
+  
+    const {z, ...remainingPre} = {w:1, x:2, y:3, z:4};
+    console.log(z, remainingPre); // 4, [1,2,3] => 키에 맞게 값이 할당됨
   }
 
   // Array
-  const animals = ['doc', 'cat'];
-
-  // bad..
   {
-    const first = animals[0];
-    const second = animals[1];
+    const animals = ['doc', 'cat'];
+
+    // bad..
+    {
+      const first = animals[0];
+      const second = animals[1];
+      console.log(first, second);
+    }
+
+    // good!
+    const [first, second] = animals; // Array에 사용할때에는 대괄호[] 사용
     console.log(first, second);
   }
 
-  // good!
-  const [first, second] = animals; // Array에 사용할때에는 대괄호[] 사용
-  console.log(first, second);
+  // 스왑
+  {
+    var x=1, y=2;
+    var [x, y] = [y, x];
+    console.log(x, y);
+  }
+
+  // 나머지 배열
+  {
+    var [x, y, ...remaining] = [1,2,3,4];
+    console.log(x, y, remaining);
+
+    var x=1, y=2, z=3, h=4;
+    var [z, ...remaining] = [x,y,z,h];
+    console.log(z, remaining); // 1, [2,3,4] => 변수명이 키가 아니기 때문에 그냥 '순서대로' 할당됨
+  }
+
+  // 값 무시하기
+  {
+    var [, x, ...remaining] = [1,2,3,4];
+    console.log(x, remaining);
+  }
 }
 
 //-------------------------------------------------------
