@@ -19,6 +19,35 @@ let global = 'global';
 // console.log(local); // error
 console.log(global);
 
+// 예제:
+{
+  var funcs = []
+
+  for (var i = 0; i < 3; i++) {
+      funcs.push(function() {
+          console.log(i)
+      })
+  }
+  
+  for (var j = 0; j < 3; j++) {
+      funcs[j]() // 3 3 3
+  }
+}
+
+{
+  var funcs = []
+
+  for (let i = 0; i < 3; i++) {
+      funcs.push(function() {
+          console.log(i)
+      })
+  }
+
+  for (var j = 0; j < 3; j++) {
+      funcs[j]() // 0 1 2
+  }
+}
+
 // var (don't ever use this!)
 // hoisting (move declaration from bottom to top)
 // has no block scope
