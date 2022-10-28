@@ -21,17 +21,28 @@ console.log(fruits[fruits.length-1]);
 // 3. Looping over an array
 // print all fruits
 // a. for
-console.clear();
+// console.clear();
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
 
-// b. for of
+// b. for in -> index
+for(let index in fruits) {
+  console.log(index);
+}
+
+// c. for of -> value
 for(let fruit of fruits) {
   console.log(fruit);
 }
 
-// c. forEach
+// for of 는 array 또는 string 타입에서 사용 가능하다.
+var hello = "is it me you're looking for?"
+for (var char of hello) {
+    console.log(char);
+}
+
+// d. forEach
 fruits.forEach(function (value, index, array) {
   console.log(value, index, array);
 });
@@ -85,7 +96,7 @@ console.log(newFruits);
 
 // 5. Searching
 // indexOf: find the index
-console.clear();
+// console.clear();
 console.log(fruits);
 console.log(fruits.indexOf('apple'));
 console.log(fruits.indexOf('watermelon'));
@@ -96,7 +107,7 @@ console.log(fruits.includes('watermelon'));
 console.log(fruits.includes('kokonut'));
 
 // lastIndexOf
-console.clear();
+// console.clear();
 console.log(fruits);
 console.log(fruits.indexOf('apple'));
 console.log(fruits.lastIndexOf('apple'));
