@@ -199,6 +199,19 @@ const simpleMultiply = (a, b) => {
   outter(1,2,3,4);
 }
 
+// 객체 리턴하기
+{
+  var foo1 = () => {
+    bar: 123
+  }
+  console.log(foo1()); // undefined
+
+  var foo2 = () => ({
+    bar: 123
+  });
+  console.log(foo2());
+}
+
 //-------------------------------------------------------
 
 // IIFE: Immediately Invoked Function Expression
