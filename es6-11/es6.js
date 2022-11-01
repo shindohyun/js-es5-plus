@@ -251,3 +251,46 @@
   // good!
   console.log(`Today weather is ${weather} and temparature is ${temparature}`);
 }
+
+{
+  /**
+   * tag 함수의 형태
+   * tag 함수란?: 템플릿 문자열 앞에 사용되는 함수
+   * 템플릿 문자열과 모든 자리 표시자 표현식의 값을 처리하여 반환한다.
+   * @param {*} literals 모든 템플릿 문자열 배열
+   * @param  {...any} placeholders 모든 자리 표시자 표현식 배열
+   */
+  function tag(literals, ...placeholders) {
+    console.log(`literals: ${literals}`);
+    console.log(`placeholders: ${placeholders}`);
+    return 'tag result';
+  }
+  
+  const name = 'dohyun';
+  const age = 30;
+  console.log(tag`My name is ${name} and I'm ${age} y.o.`);
+  
+  // 예제: HTML Escape
+  {
+    var say = 'a bird in hand > two in the bush'
+    var html = htmlEscape`<div> I would just like to say : ${say}</div>`
+    
+    function htmlEscape(literals, ...placeholders) {
+      let result = ''
+      for (let i = 0; i < placeholders.length; i++) {
+        result += literals[i]
+        result += placeholders[i]
+          .replace(/&/g, '&amp;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+      }
+
+      result += literals[literals.length - 1]
+      return result
+    }
+    
+    console.log(html);
+  }
+}
