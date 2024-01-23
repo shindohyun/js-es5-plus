@@ -53,7 +53,7 @@ class User {
     // 현재 User는 firstName, lastName, _age 세 개의 필드를 갖는다.
     this.firstName = firstName;
     this.lastName = lastName;
-    this.age = age; // call age getter and setter
+    this.age = age; // call age setter
   }
 
   get age() {
@@ -69,7 +69,7 @@ class User {
 }
 
 const user1 = new User('Steve', 'Job', -1);
-console.log(user1.age);
+console.log(user1.age); // call age getter
 
 //-------------------------------------------------------
 
