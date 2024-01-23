@@ -88,6 +88,7 @@ console.log(experiment._protectedField);
 //-------------------------------------------------------
 
 // 4. Static properties and methods
+// 클래스 인스턴스에서는 정적 속성에 직접 액세스할 수 없습니다.
 // Too soon!
 class Article {
   static publisher = 'Dream Coding';
