@@ -87,8 +87,8 @@ const students = [
 // Q9. compute students' average score
 {
   // Array.reduce: callback function의 반환값은 다음 회차에 previousValue로 전달된다.
-  // initialValue을 지정하지 않는 경우: 두 번째 회차 부터 시작 (currentValue가 배열의 두 번째 요소)
-  // initialValue을 지정하는 경우: 첫 번째 회차 부터 시작 (previousValue에 initialValue가 전달됨)
+  // initialValue을 지정하지 않는 경우: 두 번째 회차 부터 시작 (currentValue가 배열의 두 번째 요소, prevValue가 배열의 첫 번째 요소)
+  // initialValue을 지정하는 경우: 첫 번째 회차 부터 시작 (currentValue가 배열의 첫 번째 요소, previousValue에 initialValue가 전달됨)
   const result = students.reduce(function(prevValue, currValue, currIndex, array) {
     // console.log(prevValue, currValue, currIndex);
     const sum = prevValue + currValue.score;
