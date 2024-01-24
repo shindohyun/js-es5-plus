@@ -1,7 +1,7 @@
 // Q1. make a string out of an array
 {
   const fruits = ['apple', 'banana', 'orange'];
-  const result = fruits.join('|');
+  const result = fruits.join('|'); // 기본 구분자: ','
   console.log(result);
 }
 
