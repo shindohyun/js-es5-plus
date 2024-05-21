@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Named export/import example</title>
+  </head>
+  <body>
+    <h1>export</h1>
+    <ul>
+      <li>JavaScript 모듈에서 함수, 객체, 원시 값을 내보낼 때 사용</li>
+      <li>strict 모드로 내보내짐</li>
+      <li>HTML안에 작성한 스크립트에서는 사용할 수 없음</li>
+    </ul>
+    <hr></hr>
+    <h1>import</h1>
+    <ul>
+      <li>다른 모듈에서 내보낸 바인딩을 가져올 때 사용</li>
+      <li>strict 모드로 가져옴</li>
+      <li>HTML안에 작성한 스크립트에서는 사용할 수 없음</li>
+      <li>
+        import가 사용되는 스크립트는 HTML에서 script type module과 함께 사용되어야한다.<br>
+        ex) &lt;script type="module" src="./main.js"&gt;<br>
+        또한 HTTP 서버를 통해 접근해야한다. 그렇지않으면 CORS 정책 오류가 발생한다.
+      </li>
+    </ul>
+    <hr></hr>
+    <h1>import()</h1>
+    <hr></hr>
+    <ul>
+      <li><a href="./named/index.html">named export</a></li>
+      <li><a href="./default/index.html">default export</a></li>
+      <li><a href="./export-from/named/index.html">export from (named)</a></li>
+      <li><a href="./export-from/default/index.html">export from (default)</a></li>
+      <li><a href="./dynamic-import/index.html">dynamic import</a></li>
+    </ul>
+  </body>
+</html>
