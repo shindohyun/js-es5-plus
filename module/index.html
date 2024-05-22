@@ -17,12 +17,13 @@
     <ul>
       <li>다른 모듈에서 내보낸 바인딩을 가져올 때 사용</li>
       <li>strict 모드로 가져옴</li>
-      <li>HTML안에 작성한 스크립트에서는 사용할 수 없음</li>
       <li>
         import가 사용되는 스크립트는 HTML에서 script type module과 함께 사용되어야한다.<br>
         ex) &lt;script type="module" src="./main.js"&gt;<br>
-        또한 HTTP 서버를 통해 접근해야한다. 그렇지않으면 CORS 정책 오류가 발생한다.
       </li>
+      <li>script type module을 포함하면 인터널 스크립트에서도 import 모듈을 사용할 수 있다.</li>
+      <li>HTTP 서버를 통해 접근해야한다. 그렇지않으면 CORS 정책 오류가 발생한다.</li>
+      <li>script defer 속성을 사용하지 않아도된다. 모듈은 자동으로 defer</li>
     </ul>
     <hr></hr>
     <h1>import()</h1>

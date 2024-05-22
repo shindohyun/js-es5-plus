@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Named export/import example</title>
-    <script defer src="./main.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
+    <!-- script type module을 아래와 같이 포함하면 인터널 스크립트안에서도 import 모듈 사용 가능 -->
+    <!-- <script type="module">
+      import { var1, let1, const1 } from './module.js';
+      console.log(var1, let1, const1);
+    </script> -->
   </head>
   <body>
     <h1>named export</h1>
